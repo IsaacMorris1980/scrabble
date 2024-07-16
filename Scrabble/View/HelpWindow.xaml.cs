@@ -7,6 +7,8 @@ namespace Scrabble.View
         public HelpWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            Topmost = true;
         }
     }
 }
