@@ -2,9 +2,9 @@
 
 namespace Scrabble.View
 {
-    public partial class HelpWindow : Window
+    public partial class MobileHelpWindow : Window
     {
-        public HelpWindow()
+        public MobileHelpWindow()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;

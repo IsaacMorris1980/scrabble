@@ -388,16 +388,18 @@ namespace Scrabble
             foreach (var item in Application.Current.Windows)
             {
                 Debug.WriteLine(item.GetType());
-                if (item.GetType()==typeof(HelpWindow))
+                if (item.GetType()==typeof(DesktopHelpWindow))
                 {
-                    ((HelpWindow)item).Topmost=false;
-                    ((HelpWindow)item).Topmost = true;
+                    ((DesktopHelpWindow)item).Top = (System.Windows.SystemParameters.WorkArea.Height / 2)-(((DesktopHelpWindow)item).Height/2);
+                    ((DesktopHelpWindow)item).Left = (System.Windows.SystemParameters.WorkArea.Width / 2) - (((DesktopHelpWindow)item).Width / 2); 
+                    ((DesktopHelpWindow)item).Topmost=false;
+                    ((DesktopHelpWindow)item).Topmost = true;
                     return;
                 }
             }
             if (!isfound)
             {
-                HelpWindow hw = new HelpWindow();
+                DesktopHelpWindow hw = new DesktopHelpWindow();
                 hw.Show();
             }
                

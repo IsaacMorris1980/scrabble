@@ -80,8 +80,11 @@
     <Compile Include="View\BlankTileForm.xaml.cs">
       <DependentUpon>BlankTileForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HelpWindow.xaml.cs">
-      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    <Compile Include="View\MobileHelpWindow.xaml.cs">
+      <DependentUpon>MobileHelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DesktopHelpWindow.xaml.cs">
+      <DependentUpon>DesktopHelpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TextWindow.xaml.cs">
       <DependentUpon>TextWindow.xaml</DependentUpon>
@@ -101,7 +104,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\HelpWindow.xaml">
+    <Page Include="View\MobileHelpWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DesktopHelpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
