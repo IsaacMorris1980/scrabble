@@ -8,10 +8,10 @@
         ResizeMode="CanMinimize"
         Title="Board Tile Types" Height="200" Width="150">
     <Grid>
-        <Button Content="3xWord" Background="OrangeRed" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-        <Button Content="2xWord" Background="Coral" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-        <Button Content="3xLetter" Background="MediumBlue"  HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-        <Button Content="2xLetter" Background="LightSkyBlue"  HorizontalAlignment="Left" Margin="81,79,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+        <Button ToolTip="Covering this tile will get 3 times word score" Content="3xWord" Background="OrangeRed" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+        <Button Content="2xWord" ToolTip="Covering this tile will get 2 times word score" Background="Coral" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+        <Button Content="3xLetter" ToolTip="Covering this tile will get 3 times the letter score" Background="MediumBlue"  HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+        <Button Content="2xLetter" ToolTip="Covering this tile will get 2 times the letter score" Background="LightSkyBlue"  HorizontalAlignment="Left" Margin="81,79,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
 
     </Grid>
 </Window>
