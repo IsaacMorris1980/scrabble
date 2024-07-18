@@ -8,6 +8,9 @@ using Scrabble.View;
 using Scrabble.Model;
 using Scrabble.Controller;
 using Scrabble.Model.Game;
+using System.Linq;
+using System.Diagnostics;
+
 
 namespace Scrabble
 {
@@ -25,6 +28,7 @@ namespace Scrabble
         {
             InitializeComponent();
             ThisPlayer = P;
+           this.Topmost= false;
             game = g;
             game.Subs(this);
             GameState.GSInstance.OnStateChanged += OnStateChanged;
@@ -378,10 +382,32 @@ namespace Scrabble
             }
         }
 
-        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        private async void HelpButton_Click(object sender, RoutedEventArgs e)
         {
-            HelpWindow hw = new HelpWindow();
-            hw.ShowDialog();
+            bool isfound = false;
+            foreach (var item in Application.Current.Windows)
+            {
+                Debug.WriteLine(item.GetType());
+                if (item.GetType()==typeof(DesktopHelpWindow))
+                {
+                    ((DesktopHelpWindow)item).Top = (System.Windows.SystemParameters.WorkArea.Height / 2)-(((DesktopHelpWindow)item).Height/2);
+                    ((DesktopHelpWindow)item).Left = (System.Windows.SystemParameters.WorkArea.Width / 2) - (((DesktopHelpWindow)item).Width / 2); 
+                    ((DesktopHelpWindow)item).Topmost=false;
+                    ((DesktopHelpWindow)item).Topmost = true;
+                    return;
+                }
+            }
+            if (!isfound)
+            {
+                DesktopHelpWindow hw = new DesktopHelpWindow();
+                hw.Show();
+            }
+               
+            
+           
+           
+        
         }
+    
     }
 }

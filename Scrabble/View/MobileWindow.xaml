@@ -9,11 +9,14 @@
         ResizeMode="CanMinimize"
         >
 
-    <Grid>
-        <Button x:Name="ValidateButton"  FontSize="15" Background="Green" Foreground="White" IsEnabled="True" Content="DONE" HorizontalAlignment="Left" Margin="151,243,0,0" VerticalAlignment="Top" Width="69" Height="24" Click="ValidateButton_Click"/>
-        <Button x:Name="SwapButton" FontSize="15" Background="Tomato" Foreground="White" IsEnabled="True" Content="SWAP" HorizontalAlignment="Left" Margin="12,243,0,0" VerticalAlignment="Top" Width="70" Height="24" Click="SwapButton_Click"/>
-        <Button x:Name="ReloadButton" FontSize="15" Background="PaleVioletRed" Foreground="White" IsEnabled="True" Content="RELOAD" HorizontalAlignment="Left" Margin="82,243,0,0" VerticalAlignment="Top" Width="69" Height="24" Click="ReloadButton_Click"/>
-        <UniformGrid x:Name="BoardGrid" Columns="15" Rows="15" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="233" Margin="0,6,0,0">
+    <Grid Margin="-1,1,1,-1" RenderTransformOrigin="0.844,0.686">
+        
+        <Button x:Name="ValidateButton"  FontSize="15" Background="Green" Foreground="White" IsEnabled="True" Content="DONE" HorizontalAlignment="Left" Margin="130,243,0,0" VerticalAlignment="Top" Width="50" Height="24" Click="ValidateButton_Click"/>
+        <Button x:Name="SwapButton" FontSize="15" Background="Tomato" Foreground="White" IsEnabled="True" Content="SWAP" HorizontalAlignment="Left" Margin="12,243,0,0" VerticalAlignment="Top" Width="50" Height="24" Click="SwapButton_Click"/>
+        <Button x:Name="ReloadButton" FontSize="15" Background="PaleVioletRed" Foreground="White" IsEnabled="True" Content="RELOAD" HorizontalAlignment="Left" Margin="67,243,0,0" VerticalAlignment="Top" Width="58" Height="24" Click="ReloadButton_Click"/>
+        <Button x:Name="HelpButton" Width="25" Height="24" FontSize="15" Background="Blue" Foreground="White" Margin="185,243,30,0" IsEnabled="True" VerticalAlignment="Top" FontFamily="Segoe MDL2 Assets" Content="&#xE897;" RenderTransformOrigin="1.9,-1.965" Click="HelpButton_Click"/>
+        <UniformGrid x:Name="BoardGrid" Columns="15" Rows="15" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="233" Margin="0,6,0,0" >
+            
             <UniformGrid.Resources>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Margin" Value="0.5"/>

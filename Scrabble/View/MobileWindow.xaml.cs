@@ -6,6 +6,7 @@ using System.Windows.Media;
 using Scrabble.View;
 using Scrabble.Model;
 using Scrabble.Controller;
+using System.Diagnostics;
 
 namespace Scrabble
 {
@@ -337,5 +338,26 @@ namespace Scrabble
             WriteToLabel(null);
         }
 
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool isfound = false;
+            foreach (var item in Application.Current.Windows)
+            {
+                Debug.WriteLine(item.GetType());
+                if (item.GetType()==typeof(MobileHelpWindow))
+                {
+                    ((MobileHelpWindow)item).Top = (System.Windows.SystemParameters.WorkArea.Height / 2)-(((MobileHelpWindow)item).Height/2);
+                    ((MobileHelpWindow)item).Left = (System.Windows.SystemParameters.WorkArea.Width / 2) - (((MobileHelpWindow)item).Width / 2); 
+                    ((MobileHelpWindow)item).Topmost=false;
+                    ((MobileHelpWindow)item).Topmost = true;
+                    return;
+                }
+            }
+            if (!isfound)
+            {
+                MobileHelpWindow hw = new MobileHelpWindow();
+                hw.Show();
+            }
+        }
     }
 }
